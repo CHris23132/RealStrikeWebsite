@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Real Strike Warfare Two Blaster Set Bluetooth Toy Blaster Electronic Toy Blaster</title>
+  <!-- Modern UI CSS -->
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Montserrat', Arial, sans-serif;
+      background: #fafbfc;
+      color: #222;
+      min-height: 100vh;
+    }
+    .top-bar {
+      background: #2d2d2d;
+      color: #fff;
+      text-align: center;
+      font-size: 13px;
+      padding: 6px 0;
+      letter-spacing: 0.5px;
+    }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #fff;
+      padding: 18px 40px 10px 40px;
+      border-bottom: 1px solid #e5e5e5;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    .logo {
+      font-weight: 700;
+      font-size: 1.6rem;
+      letter-spacing: 2px;
+      margin-right: 32px;
+    }
+    .header-left {
+      display: flex;
+      align-items: center;
+    }
+    .header-nav a {
+      color: #222;
+      text-decoration: none;
+      margin: 0 14px;
+      font-weight: 500;
+      font-size: 1rem;
+      transition: color 0.2s;
+    }
+    .header-nav a:hover {
+      color: #5a4fff;
+    }
+    .header-right {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .header-right .icon {
+      font-size: 1.2rem;
+      margin-right: 8px;
+      cursor: pointer;
+    }
+    .header-right select {
+      border: 1px solid #e5e5e5;
+      border-radius: 4px;
+      padding: 4px 8px;
+      font-size: 1rem;
+      background: #fafbfc;
+    }
+    .breadcrumb {
+      font-size: 0.97rem;
+      color: #888;
+      margin: 18px 0 0 40px;
+    }
+    .breadcrumb a {
+      color: #5a4fff;
+      text-decoration: none;
+    }
+    .main-content {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      max-width: 1200px;
+      margin: 30px auto 0 auto;
+      padding: 0 40px;
+      gap: 40px;
+    }
+    .product-gallery {
+      flex: 1.1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-width: 340px;
+    }
+    .main-image {
+      width: 100%;
+      max-width: 420px;
+      border-radius: 12px;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+      background: #fff;
+      margin-bottom: 18px;
+    }
+    .thumbnail-row {
+      display: flex;
+      gap: 10px;
+      margin-top: 6px;
+    }
+    .thumbnail-row img {
+      width: 60px;
+      height: 45px;
+      object-fit: cover;
+      border-radius: 6px;
+      border: 2px solid #e5e5e5;
+      cursor: pointer;
+      transition: border 0.2s;
+      box-sizing: border-box;
+    }
+    .thumbnail-row img:hover {
+      border: 2px solid #5a4fff;
+    }
+    .thumbnail-row img.active-thumb {
+      border: 2.5px solid #5a4fff;
+      box-shadow: 0 0 0 2px #e0e7ff;
+    }
+    .product-details {
+      flex: 1.3;
+      background: #fff;
+      border-radius: 14px;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+      padding: 32px 32px 24px 32px;
+      margin-right: 0;
+      min-width: 340px;
+      max-width: 480px;
+    }
+    .product-details h1 {
+      font-size: 1.35rem;
+      font-weight: 700;
+      margin: 0 0 10px 0;
+      color: #222;
+    }
+    .sku {
+      font-size: 0.95rem;
+      color: #888;
+      margin-bottom: 4px;
+    }
+    .reviews {
+      color: #f5b50a;
+      font-size: 1rem;
+      margin-bottom: 4px;
+    }
+    .availability {
+      color: #e53935;
+      font-size: 0.98rem;
+      margin-bottom: 10px;
+    }
+    .price-row {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+    .save {
+      background: #e0f7fa;
+      color: #0097a7;
+      font-size: 0.95rem;
+      padding: 2px 8px;
+      border-radius: 6px;
+      font-weight: 600;
+    }
+    .old-price {
+      color: #aaa;
+      text-decoration: line-through;
+      font-size: 1.05rem;
+    }
+    .price {
+      color: #222;
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-left: 4px;
+    }
+    .features {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 12px 0;
+      font-size: 0.98rem;
+      color: #444;
+    }
+    .features li {
+      margin-bottom: 4px;
+    }
+    .free-shipping-box {
+      background: #f3f7ff;
+      color: #2d2d2d;
+      border: 1.5px solid #5a4fff;
+      border-radius: 8px;
+      padding: 10px 14px;
+      font-size: 1rem;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .color-select {
+      margin-bottom: 16px;
+    }
+    .color-select label {
+      font-weight: 600;
+      margin-right: 10px;
+    }
+    .color-thumbs {
+      display: flex;
+      gap: 10px;
+      margin-top: 6px;
+    }
+    .color-thumbs img {
+      width: 44px;
+      height: 22px;
+      border-radius: 6px;
+      border: 2px solid #e5e5e5;
+      cursor: pointer;
+      transition: border 0.2s;
+    }
+    .color-thumbs img:hover {
+      border: 2px solid #5a4fff;
+    }
+    .quantity-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 18px;
+    }
+    .quantity-row label {
+      font-weight: 500;
+      margin-right: 8px;
+    }
+    .quantity-row button {
+      background: #f3f7ff;
+      border: 1px solid #5a4fff;
+      color: #5a4fff;
+      font-size: 1.1rem;
+      width: 28px;
+      height: 28px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+    }
+    .quantity-row button:hover {
+      background: #5a4fff;
+      color: #fff;
+    }
+    .quantity-row input[type="number"] {
+      width: 40px;
+      text-align: center;
+      font-size: 1rem;
+      border: 1px solid #e5e5e5;
+      border-radius: 4px;
+      padding: 2px 0;
+    }
+    .add-to-cart {
+      width: 100%;
+      background: #2d2d2d;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 13px 0;
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .add-to-cart:hover {
+      background: #5a4fff;
+    }
+    .buy-now {
+      width: 100%;
+      background: #5a4fff;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 13px 0;
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .buy-now:hover {
+      background: #2d2d2d;
+    }
+    .payment-options {
+      color: #888;
+      font-size: 0.98rem;
+      margin-bottom: 18px;
+      text-align: center;
+    }
+    .extra-surprise {
+      background: #f3f7ff;
+      border-radius: 8px;
+      padding: 10px 14px;
+      margin-top: 10px;
+      font-size: 1rem;
+    }
+    .surprise-options {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-top: 6px;
+    }
+    .sidebar {
+      flex: 0.7;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      min-width: 220px;
+      max-width: 260px;
+    }
+    .chat-box {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+      padding: 18px 16px;
+      font-size: 1rem;
+      margin-bottom: 10px;
+      border-left: 4px solid #5a4fff;
+    }
+    .chat-box b {
+      color: #5a4fff;
+      font-size: 1.05rem;
+    }
+    .get-10-off {
+      background: #222;
+      color: #fff;
+      border-radius: 8px;
+      padding: 12px 0;
+      text-align: center;
+      font-weight: 600;
+      font-size: 1.1rem;
+      letter-spacing: 1px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .get-10-off:hover {
+      background: #5a4fff;
+    }
+    .footer {
+      background: #2d2d2d;
+      color: #fff;
+      padding: 22px 0 18px 0;
+      margin-top: 60px;
+      text-align: center;
+    }
+    .footer-nav {
+      display: flex;
+      justify-content: center;
+      gap: 28px;
+      flex-wrap: wrap;
+    }
+    .footer-nav a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 1rem;
+      opacity: 0.85;
+      transition: opacity 0.2s;
+    }
+    .footer-nav a:hover {
+      opacity: 1;
+      text-decoration: underline;
+    }
+    /* Responsive Design */
+    @media (max-width: 1024px) {
+      .main-content {
+        flex-direction: column;
+        gap: 24px;
+        padding: 0 10px;
+      }
+      .product-gallery, .product-details, .sidebar {
+        max-width: 100%;
+        min-width: 0;
+      }
+      .product-details {
+        margin: 0 auto;
+      }
+      .sidebar {
+        flex-direction: row;
+        gap: 10px;
+        justify-content: center;
+      }
+    }
+    @media (max-width: 700px) {
+      .header, .main-content {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 0 4vw;
+      }
+      .header {
+        padding: 12px 4vw 8px 4vw;
+      }
+      .breadcrumb {
+        margin-left: 4vw;
+      }
+      .product-details, .product-gallery, .sidebar {
+        padding: 18px 8px;
+        box-shadow: none;
+      }
+      .footer-nav {
+        gap: 12px;
+      }
+    }
+    ::selection {
+      background: #5a4fff22;
+    }
+  </style>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const mainImage = document.querySelector('.main-image');
+      const thumbnails = document.querySelectorAll('.thumbnail-row img');
+      thumbnails.forEach((thumb, idx) => {
+        thumb.addEventListener('click', function() {
+          mainImage.src = this.src;
+          mainImage.alt = this.alt;
+          thumbnails.forEach(t => t.classList.remove('active-thumb'));
+          this.classList.add('active-thumb');
+        });
+      });
+      // Set the first thumbnail as active on load
+      if (thumbnails.length) thumbnails[0].classList.add('active-thumb');
+    });
+  </script>
+</head>
+<body>
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <span>Free shipping for orders over $149.99 in Canada and USA Exclusions apply</span>
+  </div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="header-left">
+      <img src="images/RealStrike.png" alt="REAL STRIKE Logo" class="logo" height="38">
+      <nav class="header-nav">
+        <a href="#">Site</a>
+        <a href="#">App Features</a>
+        <a href="#">Real Strike Events</a>
+        <a href="#">Accessories</a>
+        <a href="#">Replacement Parts</a>
+      </nav>
+    </div>
+    <div class="header-right">
+      <span class="icon">🔍</span>
+      <span class="icon">👤</span>
+      <span class="icon">🛒</span>
+      <select>
+        <option>Canada (CAD $)</option>
+        <option>USA (USD $)</option>
+      </select>
+    </div>
+  </header>
+
+  <!-- Breadcrumb -->
+  <nav class="breadcrumb">
+    <a href="#">Home</a> &gt; <span>Real Strike Warfare Two Blaster Set Bluetooth Toy Blaster Electronic Toy Blaster</span>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <section class="product-gallery">
+      <img src="images/RS1.png" alt="Product Main" class="main-image">
+      <div class="thumbnail-row">
+        <img src="images/RS1.png" alt="Thumb 1">
+        <img src="images/RS2.png" alt="Thumb 2">
+        <img src="images/rs3.png" alt="Thumb 3">
+        <img src="images/RS4.png" alt="Thumb 4">
+        <img src="images/RS5.png" alt="Thumb 5">
+        <img src="images/RS6.png" alt="Thumb 6">
+        <img src="images/RS7.png" alt="Thumb 7">
+        <img src="images/RS8.png" alt="Thumb 8">
+        <img src="images/RS9.png" alt="Thumb 9">
+        <img src="images/RS10.png" alt="Thumb 10">
+        <img src="images/RS11.png" alt="Thumb 11">
+        <img src="images/RS13.png" alt="Thumb 12">
+        <img src="images/RS14.png" alt="Thumb 13">
+      </div>
+    </section>
+    <section class="product-details">
+      <h1>Real Strike Warfare Two Blaster Set Bluetooth Toy Blaster Electronic Toy Blaster</h1>
+      <div class="sku">SKU 82328Blue</div>
+      <div class="reviews">★★★★★ 25 reviews</div>
+      <div class="availability">Availability: Only 2 left!</div>
+      <div class="price-row">
+        <span class="save">Save $110.00</span>
+        <span class="old-price">$199.99</span>
+        <span class="price">$119.99</span>
+      </div>
+      <ul class="features">
+        <li><b>Free Shipping</b> Canada-wide on all ride-on cars. No extra fees. Exclusions apply.</li>
+        <li><b>Easy Returns</b> 14-day return guarantee on unused items.</li>
+        <li><b>Warranty Support</b> 3-month warranty. Expert help & free spare parts.</li>
+      </ul>
+      <div class="free-shipping-box">Eligible for Free Shipping<br>Canada-wide. No extra fees. Exclusions apply.</div>
+      <div class="color-select">
+        <label>Set Color: Blue & Green</label>
+        <div class="color-thumbs">
+          <img src="https://via.placeholder.com/60x30/0000FF/FFFFFF?text=Blue" alt="Blue">
+          <img src="https://via.placeholder.com/60x30/00FF00/FFFFFF?text=Green" alt="Green">
+        </div>
+      </div>
+      <div class="quantity-row">
+        <label>Quantity</label>
+        <button>-</button>
+        <input type="number" value="1" min="1">
+        <button>+</button>
+      </div>
+      <button class="add-to-cart">Add to cart</button>
+      <button class="buy-now">Buy Now</button>
+      <div class="payment-options">More payment options</div>
+      <div class="extra-surprise">
+        <b>Get extra surprise for your kid</b>
+        <div class="surprise-options">
+          <label><input type="checkbox"> Respawn Flags</label>
+          <label><input type="checkbox"> Capture the flag</label>
+        </div>
+      </div>
+    </section>
+    <aside class="sidebar">
+      <div class="chat-box">
+        <b>Voltz Toys</b>
+        <div>Hello 👋 Looking for something? We're here to help!</div>
+      </div>
+      <div class="get-10-off">Get $10 Off</div>
+    </aside>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <nav class="footer-nav">
+      <a href="#">Troubleshooting Guide</a>
+      <a href="#">Help Centre</a>
+      <a href="#">Social</a>
+      <a href="#">Contact Us</a>
+      <a href="#">Warranty</a>
+      <a href="#">Registration</a>
+    </nav>
+  </footer>
+</body>
+</html>
