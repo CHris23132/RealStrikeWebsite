@@ -330,43 +330,6 @@
       gap: 6px;
       margin-top: 6px;
     }
-    .sidebar {
-      flex: 0.7;
-      display: flex;
-      flex-direction: column;
-      gap: 18px;
-      min-width: 220px;
-      max-width: 260px;
-    }
-    .chat-box {
-      background: #fff;
-      border-radius: 10px;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.07);
-      padding: 18px 16px;
-      font-size: 1rem;
-      margin-bottom: 10px;
-      border-left: 4px solid #5a4fff;
-    }
-    .chat-box b {
-      color: #5a4fff;
-      font-size: 1.05rem;
-    }
-    .get-10-off {
-      background: #222;
-      color: #fff;
-      border-radius: 8px;
-      padding: 12px 0;
-      text-align: center;
-      font-weight: 600;
-      font-size: 1.1rem;
-      letter-spacing: 1px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.07);
-      cursor: pointer;
-      transition: background 0.2s;
-    }
-    .get-10-off:hover {
-      background: #5a4fff;
-    }
     .footer {
       background: #2d2d2d;
       color: #fff;
@@ -398,17 +361,12 @@
         gap: 24px;
         padding: 0 10px;
       }
-      .product-gallery, .product-details, .sidebar {
+      .product-gallery, .product-details {
         max-width: 100%;
         min-width: 0;
       }
       .product-details {
         margin: 0 auto;
-      }
-      .sidebar {
-        flex-direction: row;
-        gap: 10px;
-        justify-content: center;
       }
     }
     @media (max-width: 700px) {
@@ -423,7 +381,7 @@
       .breadcrumb {
         margin-left: 4vw;
       }
-      .product-details, .product-gallery, .sidebar {
+      .product-details, .product-gallery {
         padding: 18px 8px;
         box-shadow: none;
       }
@@ -464,16 +422,18 @@
       <img src="images/RealStrike.png" alt="REAL STRIKE Logo" class="logo" height="38">
       <nav class="header-nav">
         <a href="#">Site</a>
-        <a href="#">App Features</a>
-        <a href="#">Real Strike Events</a>
+        <a href="#">Application</a>
+        <a href="#">Events</a>
         <a href="#">Accessories</a>
-        <a href="#">Replacement Parts</a>
+        <a href="#">Parts</a>
       </nav>
     </div>
     <div class="header-right">
-      <span class="icon">🔍</span>
-      <span class="icon">👤</span>
-      <span class="icon">🛒</span>
+      <span class="icon" aria-label="Cart">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="vertical-align:middle;">
+          <path d="M7 20c-1.104 0-2 .896-2 2s.896 2 2 2 2-.896 2-2-.896-2-2-2zm10 0c-1.104 0-2 .896-2 2s.896 2 2 2 2-.896 2-2-.896-2-2-2zM7.334 16l.94-2h7.453c.828 0 1.563-.522 1.847-1.303l3.396-8.697A1 1 0 0 0 20 3H5.21l-.94-2H0v2h2l3.6 7.59-1.35 2.44C3.52 13.37 4.48 15 6 15h12v-2H6.42c-.14 0-.25-.11-.25-.25l.03-.12z" fill="#222"/>
+        </svg>
+      </span>
       <select>
         <option>Canada (CAD $)</option>
         <option>USA (USD $)</option>
@@ -492,13 +452,13 @@
       <img src="images/RS1.png" alt="Product Main" class="main-image">
       <div class="thumbnail-row">
         <img src="images/RS1.png" alt="Thumb 1">
-        <img src="images/RS2.png" alt="Thumb 2">
+        <img src="images/RS8.png" alt="Thumb 2">
         <img src="images/rs3.png" alt="Thumb 3">
         <img src="images/RS4.png" alt="Thumb 4">
         <img src="images/RS5.png" alt="Thumb 5">
         <img src="images/RS6.png" alt="Thumb 6">
         <img src="images/RS7.png" alt="Thumb 7">
-        <img src="images/RS8.png" alt="Thumb 8">
+        <img src="images/RS2.png" alt="Thumb 8">
         <img src="images/RS9.png" alt="Thumb 9">
         <img src="images/RS10.png" alt="Thumb 10">
         <img src="images/RS11.png" alt="Thumb 11">
@@ -540,18 +500,19 @@
       <div class="extra-surprise">
         <b>Get extra surprise for your kid</b>
         <div class="surprise-options">
-          <label><input type="checkbox"> Respawn Flags</label>
-          <label><input type="checkbox"> Capture the flag</label>
+          <label style="display:flex;align-items:center;gap:8px;">
+            <input type="checkbox">
+            <img src="images/blueQRcode.png" alt="Respawn Flags QR" style="width:32px;height:32px;object-fit:cover;border-radius:6px;border:1.5px solid #e5e5e5;">
+            Respawn Flags
+          </label>
+          <label style="display:flex;align-items:center;gap:8px;">
+            <input type="checkbox">
+            <img src="images/QRCODEImages.png" alt="Capture the flag QR" style="width:32px;height:32px;object-fit:cover;border-radius:6px;border:1.5px solid #e5e5e5;">
+            Capture the flag
+          </label>
         </div>
       </div>
     </section>
-    <aside class="sidebar">
-      <div class="chat-box">
-        <b>Voltz Toys</b>
-        <div>Hello 👋 Looking for something? We're here to help!</div>
-      </div>
-      <div class="get-10-off">Get $10 Off</div>
-    </aside>
   </main>
 
   <!-- Footer -->
