@@ -517,6 +517,12 @@
       align-items: center;
       min-height: 200px;
     }
+    .currency-display {
+      font-size: 1rem;
+      color: #444;
+      font-weight: 600;
+      margin-left: 10px;
+    }
   </style>
   <script>
     document.addEventListener('DOMContentLoaded', function() {
@@ -570,10 +576,7 @@
           </svg>
         </span>
       </a>
-      <select>
-        <option>Canada (CAD $)</option>
-        <option>USA (USD $)</option>
-      </select>
+      <span class="currency-display">Canada $CAD</span>
     </div>
   </header>
 
