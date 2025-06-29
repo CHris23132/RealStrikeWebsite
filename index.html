@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Real Strike Warfare Two Blaster Set Bluetooth Toy Blaster Electronic Toy Blaster</title>
-  <link rel="icon" type="image/png" href="favicon/RS-favicon.png">
+  <link rel="icon" type="image/png" href="favicon/not-RS-favicon.png">
   <!-- Modern UI CSS -->
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
@@ -520,6 +520,7 @@
   </style>
   <script>
     document.addEventListener('DOMContentLoaded', function() {
+      // Product gallery dynamic image switching
       const mainImage = document.querySelector('.main-image');
       const thumbnails = document.querySelectorAll('.thumbnail-row img');
       thumbnails.forEach((thumb, idx) => {
@@ -530,8 +531,16 @@
           this.classList.add('active-thumb');
         });
       });
-      // Set the first thumbnail as active on load
       if (thumbnails.length) thumbnails[0].classList.add('active-thumb');
+
+      // Add to cart functionality (single item only)
+      const addToCartBtn = document.getElementById('add-to-cart-btn');
+      if (addToCartBtn) {
+        addToCartBtn.addEventListener('click', function() {
+          localStorage.setItem('cartQty', 1);
+          window.location.href = 'cart.html';
+        });
+      }
     });
   </script>
 </head>
@@ -546,7 +555,7 @@
     <div class="header-left">
       <img src="images/RealStrike.png" alt="REAL STRIKE Logo" class="logo" height="38">
       <nav class="header-nav">
-        <a href="#">Site</a>
+        <a href="#">Sale</a>
         <a href="#">Application</a>
         <a href="#">Events</a>
         <a href="#">Accessories</a>
@@ -554,11 +563,13 @@
       </nav>
     </div>
     <div class="header-right">
-      <span class="icon" aria-label="Cart">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="vertical-align:middle;">
-          <path d="M7 20c-1.104 0-2 .896-2 2s.896 2 2 2 2-.896 2-2-.896-2-2-2zm10 0c-1.104 0-2 .896-2 2s.896 2 2 2 2-.896 2-2-.896-2-2-2zM7.334 16l.94-2h7.453c.828 0 1.563-.522 1.847-1.303l3.396-8.697A1 1 0 0 0 20 3H5.21l-.94-2H0v2h2l3.6 7.59-1.35 2.44C3.52 13.37 4.48 15 6 15h12v-2H6.42c-.14 0-.25-.11-.25-.25l.03-.12z" fill="#222"/>
-        </svg>
-      </span>
+      <a href="cart.html" class="cart-link" aria-label="Cart">
+        <span class="icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="vertical-align:middle;">
+            <path d="M7 20c-1.104 0-2 .896-2 2s.896 2 2 2 2-.896 2-2-.896-2-2-2zm10 0c-1.104 0-2 .896-2 2s.896 2 2 2 2-.896 2-2-.896-2-2-2zM7.334 16l.94-2h7.453c.828 0 1.563-.522 1.847-1.303l3.396-8.697A1 1 0 0 0 20 3H5.21l-.94-2H0v2h2l3.6 7.59-1.35 2.44C3.52 13.37 4.48 15 6 15h12v-2H6.42c-.14 0-.25-.11-.25-.25l.03-.12z" fill="#222"/>
+          </svg>
+        </span>
+      </a>
       <select>
         <option>Canada (CAD $)</option>
         <option>USA (USD $)</option>
@@ -613,13 +624,7 @@
           <img src="images/RS9.png" alt="BlueGreen" style="width:60px;height:30px;object-fit:cover;border-radius:6px;border:2px solid #e5e5e5;">
         </div>
       </div>
-      <div class="quantity-row">
-        <label>Quantity</label>
-        <button>-</button>
-        <input type="number" value="1" min="1">
-        <button>+</button>
-      </div>
-      <button class="add-to-cart">Add to cart</button>
+      <button class="add-to-cart" id="add-to-cart-btn">Add to cart</button>
       <a href="https://buy.stripe.com/aFabJ1gT75MOgf2aZ96c00b" target="_blank" rel="noopener noreferrer" class="buy-now" style="display:inline-block;text-align:center;text-decoration:none;">Buy Now</a>
       <div class="payment-options">More payment options</div>
       <div class="extra-surprise">

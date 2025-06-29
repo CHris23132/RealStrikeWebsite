@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout - Real Strike</title>
+  <link rel="icon" type="image/png" href="favicon/not-RS-favicon.png">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Montserrat', Arial, sans-serif;
+      background: #fafbfc;
+      color: #222;
+      min-height: 100vh;
+    }
+    .checkout-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #fff;
+      padding: 18px 40px 10px 40px;
+      border-bottom: 1px solid #e5e5e5;
+    }
+    .checkout-logo {
+      height: 38px;
+    }
+    .checkout-main {
+      display: flex;
+      flex-direction: row;
+      gap: 36px;
+      max-width: 1100px;
+      margin: 40px auto 0 auto;
+      padding: 0 20px 40px 20px;
+    }
+    .checkout-left {
+      flex: 1.2;
+      background: #fff;
+      border-radius: 14px;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+      padding: 32px 32px 24px 32px;
+      min-width: 320px;
+    }
+    .checkout-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 24px;
+      letter-spacing: 1px;
+    }
+    .checkout-product-card {
+      display: flex;
+      align-items: flex-start;
+      gap: 18px;
+      margin-bottom: 18px;
+      border-bottom: 1.5px solid #ececec;
+      padding-bottom: 18px;
+    }
+    .checkout-product-img {
+      width: 110px;
+      height: 90px;
+      object-fit: cover;
+      border-radius: 10px;
+      background: #f3f3f3;
+      border: 1.5px solid #e5e5e5;
+    }
+    .checkout-product-details {
+      flex: 1;
+    }
+    .checkout-product-title {
+      font-size: 1.08rem;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+    .checkout-product-price {
+      color: #5a4fff;
+      font-weight: 700;
+      font-size: 1.1rem;
+      margin-bottom: 8px;
+    }
+    .checkout-qty-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+    .checkout-qty-row button {
+      background: #f3f7ff;
+      border: 1px solid #5a4fff;
+      color: #5a4fff;
+      font-size: 1.1rem;
+      width: 28px;
+      height: 28px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+    }
+    .checkout-qty-row button:hover {
+      background: #5a4fff;
+      color: #fff;
+    }
+    .checkout-qty-row input[type="number"] {
+      width: 40px;
+      text-align: center;
+      font-size: 1rem;
+      border: 1px solid #e5e5e5;
+      border-radius: 4px;
+      padding: 2px 0;
+    }
+    .checkout-special-label {
+      font-size: 1rem;
+      font-weight: 500;
+      margin-bottom: 6px;
+      color: #444;
+      display: block;
+    }
+    .checkout-special-input {
+      width: 100%;
+      min-height: 48px;
+      border-radius: 8px;
+      border: 1.5px solid #e5e5e5;
+      padding: 10px 12px;
+      font-size: 1rem;
+      margin-bottom: 18px;
+      resize: vertical;
+      font-family: 'Montserrat', Arial, sans-serif;
+    }
+    .checkout-right {
+      flex: 0.9;
+      background: #fff;
+      border-radius: 14px;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+      padding: 32px 32px 24px 32px;
+      min-width: 280px;
+      max-width: 370px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      height: fit-content;
+    }
+    .order-summary-title {
+      font-size: 1.18rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      color: #222;
+    }
+    .order-summary-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 1.08rem;
+      margin-bottom: 8px;
+    }
+    .order-summary-subtotal {
+      font-size: 1.18rem;
+      font-weight: 700;
+      color: #222;
+    }
+    .order-summary-shipping {
+      background: #f3f7ff;
+      color: #2d2d2d;
+      border: 1.5px solid #5a4fff;
+      border-radius: 8px;
+      padding: 10px 14px;
+      font-size: 1rem;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 600;
+    }
+    .checkout-btn {
+      width: 100%;
+      background: #e53935;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 15px 0;
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-top: 18px;
+      cursor: pointer;
+      transition: background 0.2s;
+      text-decoration: none;
+      display: block;
+      text-align: center;
+      letter-spacing: 0.5px;
+      box-shadow: 0 2px 8px rgba(229,57,53,0.08);
+    }
+    .checkout-btn:hover {
+      background: #b71c1c;
+    }
+    .order-summary-note {
+      font-size: 0.98rem;
+      color: #888;
+      margin-bottom: 8px;
+      line-height: 1.5;
+    }
+    .order-summary-policy {
+      font-size: 0.97rem;
+      color: #444;
+      background: #f7f7f7;
+      border-radius: 8px;
+      padding: 12px 14px;
+      margin-top: 8px;
+      line-height: 1.6;
+    }
+    @media (max-width: 900px) {
+      .checkout-main {
+        flex-direction: column;
+        gap: 24px;
+        max-width: 98vw;
+      }
+      .checkout-left, .checkout-right {
+        max-width: 100%;
+        min-width: 0;
+        padding: 18px 8px;
+      }
+    }
+    .promo-timer-section {
+      background: #f3f7ff;
+      border: 1.5px solid #5a4fff;
+      border-radius: 10px;
+      padding: 18px 18px 14px 18px;
+      margin-bottom: 18px;
+      margin-top: 8px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(90, 79, 255, 0.06);
+    }
+    .promo-timer-headline {
+      font-size: 1.08rem;
+      font-weight: 600;
+      color: #222;
+      margin-bottom: 10px;
+    }
+    .promo-code-hero {
+      font-size: 1.5rem;
+      font-weight: 900;
+      color: #111;
+      letter-spacing: 3px;
+      margin: 10px 0 8px 0;
+      background: #fff;
+      border-radius: 7px;
+      padding: 7px 18px;
+      display: inline-block;
+      box-shadow: 0 2px 8px rgba(90, 79, 255, 0.08);
+    }
+    .promo-countdown {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #e53935;
+      background: #fff;
+      border: 1.5px solid #e53935;
+      border-radius: 7px;
+      padding: 7px 18px;
+      min-width: 90px;
+      letter-spacing: 1px;
+      box-shadow: 0 2px 8px rgba(229, 57, 53, 0.08);
+      margin: 0 auto;
+      display: inline-block;
+    }
+    .promo-timer-section > * {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .promo-timer-headline {
+      margin-bottom: 10px;
+    }
+    .promo-code-hero {
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <header class="checkout-header">
+    <a href="index.html"><img src="images/RealStrike.png" alt="REAL STRIKE Logo" class="checkout-logo"></a>
+  </header>
+  <main class="checkout-main">
+    <section class="checkout-left">
+      <div class="checkout-title">Your cart</div>
+      <div class="checkout-product-card">
+        <img src="images/RS9.png" alt="Real Strike Blaster" class="checkout-product-img">
+        <div class="checkout-product-details">
+          <div class="checkout-product-title">Real Strike Warfare Two Blaster Set Bluetooth Toy Blaster Electronic Toy Blaster</div>
+          <div class="checkout-product-price">$119.99</div>
+        </div>
+      </div>
+      <label class="checkout-special-label" for="special-instructions">Enter special instructions below:</label>
+      <textarea class="checkout-special-input" id="special-instructions" placeholder="Special instructions"></textarea>
+      <div class="promo-timer-section">
+        <div class="promo-timer-headline">Here is a code that will work for the next hour</div>
+        <div class="promo-code-hero">"STRIKE"</div>
+        <div class="promo-countdown" id="promo-countdown">01:00:00</div>
+      </div>
+    </section>
+    <aside class="checkout-right">
+      <div class="order-summary-title">Order summary</div>
+      <div class="order-summary-row">
+        <span>Subtotal</span>
+        <span class="order-summary-subtotal" id="cart-subtotal">$119.99</span>
+      </div>
+      <div class="order-summary-shipping">✅ You are eligible for free shipping!</div>
+      <div class="order-summary-note">Taxes and shipping calculated at checkout.</div>
+      <a href="#" id="checkout-btn" class="checkout-btn" target="_blank" rel="noopener noreferrer">Check out</a>
+      <div class="order-summary-policy">
+        <b>Please note:</b> No shipping to P.O. Box address.<br><br>
+        If the order is shipped out and returned, customers have the responsibility to pay for any extra fees.<br><br>
+        For more details, please find our shipping policy <a href="#" style="color:#5a4fff;text-decoration:underline;">here</a>.<br><br>
+        All sales are final (No returns). If you made a mistake and the order is not shipped, please contact us immediately.
+      </div>
+    </aside>
+  </main>
+  <script>
+    // Only allow checkout for a single item
+    const checkoutBtn = document.getElementById('checkout-btn');
+    const subtotal = document.getElementById('cart-subtotal');
+    subtotal.textContent = `$119.99`;
+    checkoutBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      const stripeUrl = `https://buy.stripe.com/aFabJ1gT75MOgf2aZ96c00b`;
+      window.open(stripeUrl, '_blank');
+    });
+
+    // Promo code countdown timer (1 hour)
+    function startPromoCountdown(duration, display) {
+      let timer = duration, hours, minutes, seconds;
+      setInterval(function () {
+        hours = Math.floor(timer / 3600);
+        minutes = Math.floor((timer % 3600) / 60);
+        seconds = timer % 60;
+        display.textContent =
+          (hours < 10 ? "0" : "") + hours + ":" +
+          (minutes < 10 ? "0" : "") + minutes + ":" +
+          (seconds < 10 ? "0" : "") + seconds;
+        if (--timer < 0) {
+          timer = 0;
+        }
+      }, 1000);
+    }
+    window.addEventListener('DOMContentLoaded', function() {
+      const promoCountdown = document.getElementById('promo-countdown');
+      if (promoCountdown) {
+        startPromoCountdown(60 * 60, promoCountdown); // 1 hour in seconds
+      }
+    });
+  </script>
+</body>
+</html> 
