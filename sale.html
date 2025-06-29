@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Real Strike First Edition Sale</title>
+  <link rel="icon" type="image/png" href="favicon/RS-favicon.png">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Montserrat', Arial, sans-serif;
+      background: linear-gradient(135deg, #f3f7ff 0%, #e0e7ff 100%);
+      color: #222;
+      min-height: 100vh;
+    }
+    .sale-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #fff;
+      padding: 18px 40px 10px 40px;
+      border-bottom: 1px solid #e5e5e5;
+    }
+    .sale-logo {
+      height: 38px;
+    }
+    .sale-nav {
+      display: flex;
+      gap: 24px;
+    }
+    .sale-nav a {
+      color: #222;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.05rem;
+      padding: 6px 12px;
+      border-radius: 6px;
+      transition: background 0.2s, color 0.2s;
+    }
+    .sale-nav a.active, .sale-nav a:hover {
+      background: #5a4fff;
+      color: #fff;
+    }
+    .flyer-container {
+      max-width: 700px;
+      margin: 48px auto 0 auto;
+      background: #fff;
+      border-radius: 22px;
+      box-shadow: 0 4px 32px rgba(90,79,255,0.10);
+      padding: 40px 32px 32px 32px;
+      text-align: center;
+      position: relative;
+    }
+    .flyer-sale-badge {
+      position: absolute;
+      top: -28px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #e53935;
+      color: #fff;
+      font-size: 1.15rem;
+      font-weight: 700;
+      padding: 10px 32px;
+      border-radius: 18px;
+      letter-spacing: 2px;
+      box-shadow: 0 2px 8px rgba(229,57,53,0.12);
+      z-index: 2;
+    }
+    .flyer-title {
+      font-size: 2.2rem;
+      font-weight: 900;
+      color: #222;
+      margin-top: 18px;
+      margin-bottom: 18px;
+      letter-spacing: 1.5px;
+    }
+    .flyer-product-img {
+      width: 260px;
+      max-width: 90vw;
+      border-radius: 18px;
+      box-shadow: 0 2px 16px rgba(90,79,255,0.08);
+      margin: 18px 0 24px 0;
+      background: #f3f7ff;
+      border: 2px solid #e5e5e5;
+    }
+    .flyer-price-row {
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      gap: 18px;
+      margin-bottom: 18px;
+    }
+    .flyer-old-price {
+      color: #aaa;
+      text-decoration: line-through;
+      font-size: 1.25rem;
+      font-weight: 600;
+    }
+    .flyer-new-price {
+      color: #e53935;
+      font-size: 2.1rem;
+      font-weight: 900;
+      margin-left: 6px;
+      letter-spacing: 1px;
+    }
+    .flyer-save {
+      background: #5a4fff;
+      color: #fff;
+      font-size: 1.1rem;
+      font-weight: 700;
+      padding: 6px 18px;
+      border-radius: 8px;
+      margin-left: 10px;
+      letter-spacing: 1px;
+      box-shadow: 0 2px 8px rgba(90,79,255,0.10);
+    }
+    .flyer-shipping {
+      background: #f3f7ff;
+      color: #2d2d2d;
+      border: 1.5px solid #5a4fff;
+      border-radius: 8px;
+      padding: 10px 14px;
+      font-size: 1.08rem;
+      margin: 18px auto 18px auto;
+      display: inline-block;
+      font-weight: 600;
+    }
+    .flyer-buy-btn {
+      display: inline-block;
+      width: 100%;
+      max-width: 340px;
+      background: #5a4fff;
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      padding: 18px 0;
+      font-size: 1.25rem;
+      font-weight: 800;
+      margin: 24px 0 0 0;
+      cursor: pointer;
+      transition: background 0.2s;
+      text-decoration: none;
+      letter-spacing: 1px;
+      box-shadow: 0 2px 12px rgba(90,79,255,0.10);
+    }
+    .flyer-buy-btn:hover {
+      background: #2d2d2d;
+    }
+    .flyer-note {
+      font-size: 1.01rem;
+      color: #888;
+      margin-top: 18px;
+      margin-bottom: 0;
+    }
+    @media (max-width: 700px) {
+      .sale-header {
+        padding: 12px 4vw 8px 4vw;
+      }
+      .flyer-container {
+        padding: 18px 4vw 18px 4vw;
+      }
+      .flyer-title {
+        font-size: 1.3rem;
+      }
+      .flyer-new-price {
+        font-size: 1.4rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="sale-header">
+    <a href="index.html"><img src="images/RealStrike.png" alt="REAL STRIKE Logo" class="sale-logo"></a>
+    <nav class="sale-nav">
+      <a href="sale.html" class="active">Sale</a>
+      <a href="#">Application</a>
+      <a href="#">Events</a>
+      <a href="#">Accessories</a>
+      <a href="#">Parts</a>
+    </nav>
+  </header>
+  <main>
+    <div class="flyer-container">
+      <div class="flyer-sale-badge">$80 OFF - LIMITED TIME</div>
+      <div class="flyer-title">Real Strike First Edition Sale</div>
+      <img src="images/RS9.png" alt="Real Strike Blaster" class="flyer-product-img">
+      <div class="flyer-price-row">
+        <span class="flyer-old-price">$199</span>
+        <span class="flyer-new-price">$119</span>
+        <span class="flyer-save">Save $80</span>
+      </div>
+      <div class="flyer-shipping">🚚 Free Shipping for Select Areas</div>
+      <a href="https://buy.stripe.com/aFabJ1gT75MOgf2aZ96c00b" target="_blank" rel="noopener noreferrer" class="flyer-buy-btn">Buy Now</a>
+      <div class="flyer-note">*Free shipping applies to select regions. Limited time offer. While supplies last.</div>
+    </div>
+  </main>
+</body>
+</html> 

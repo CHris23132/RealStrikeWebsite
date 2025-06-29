@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Real Strike Events</title>
+  <link rel="icon" type="image/png" href="favicon/RS-favicon.png">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Montserrat', Arial, sans-serif;
+      background: linear-gradient(135deg, #f3f7ff 0%, #e0e7ff 100%);
+      color: #222;
+      min-height: 100vh;
+    }
+    .events-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #fff;
+      padding: 18px 40px 10px 40px;
+      border-bottom: 1px solid #e5e5e5;
+    }
+    .events-logo {
+      height: 38px;
+    }
+    .events-nav {
+      display: flex;
+      gap: 24px;
+    }
+    .events-nav a {
+      color: #222;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.05rem;
+      padding: 6px 12px;
+      border-radius: 6px;
+      transition: background 0.2s, color 0.2s;
+    }
+    .events-nav a.active, .events-nav a:hover {
+      background: #5a4fff;
+      color: #fff;
+    }
+    .events-main {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 70vh;
+      text-align: center;
+    }
+    .events-coming-soon {
+      font-size: 2.5rem;
+      font-weight: 900;
+      color: #5a4fff;
+      margin-top: 80px;
+      margin-bottom: 0;
+      letter-spacing: 2px;
+      text-shadow: 0 2px 12px rgba(90,79,255,0.08);
+    }
+    @media (max-width: 700px) {
+      .events-header {
+        padding: 12px 4vw 8px 4vw;
+      }
+      .events-coming-soon {
+        font-size: 1.5rem;
+        margin-top: 40px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="events-header">
+    <a href="index.html"><img src="images/RealStrike.png" alt="REAL STRIKE Logo" class="events-logo"></a>
+    <nav class="events-nav">
+      <a href="sale.html">Sale</a>
+      <a href="application.html">Application</a>
+      <a href="events.html" class="active">Events</a>
+      <a href="#">Accessories</a>
+      <a href="#">Parts</a>
+    </nav>
+  </header>
+  <main class="events-main">
+    <div class="events-coming-soon">Coming Soon: Real Strike Events</div>
+  </main>
+</body>
+</html> 

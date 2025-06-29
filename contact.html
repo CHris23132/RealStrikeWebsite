@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us - Real Strike</title>
+  <link rel="icon" type="image/png" href="favicon/RS-favicon.png">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Montserrat', Arial, sans-serif;
+      background: linear-gradient(135deg, #f3f7ff 0%, #e0e7ff 100%);
+      color: #222;
+      min-height: 100vh;
+    }
+    .contact-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #fff;
+      padding: 18px 40px 10px 40px;
+      border-bottom: 1px solid #e5e5e5;
+    }
+    .contact-logo {
+      height: 38px;
+    }
+    .contact-nav {
+      display: flex;
+      gap: 24px;
+    }
+    .contact-nav a {
+      color: #222;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.05rem;
+      padding: 6px 12px;
+      border-radius: 6px;
+      transition: background 0.2s, color 0.2s;
+    }
+    .contact-nav a:hover {
+      background: #5a4fff;
+      color: #fff;
+    }
+    .contact-main {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 70vh;
+      text-align: center;
+    }
+    .contact-title {
+      font-size: 2.1rem;
+      font-weight: 900;
+      color: #5a4fff;
+      margin-top: 80px;
+      margin-bottom: 18px;
+      letter-spacing: 2px;
+      text-shadow: 0 2px 12px rgba(90,79,255,0.08);
+    }
+    .contact-form {
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 2px 16px rgba(90,79,255,0.07);
+      padding: 32px 28px 28px 28px;
+      max-width: 400px;
+      width: 100%;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+    .contact-form label {
+      font-weight: 600;
+      margin-bottom: 6px;
+      color: #222;
+      text-align: left;
+    }
+    .contact-form input, .contact-form textarea {
+      width: 100%;
+      padding: 10px 12px;
+      border-radius: 6px;
+      border: 1.5px solid #e5e5e5;
+      font-size: 1rem;
+      font-family: 'Montserrat', Arial, sans-serif;
+      margin-bottom: 8px;
+      resize: vertical;
+    }
+    .contact-form textarea {
+      min-height: 80px;
+    }
+    .contact-form button {
+      background: #5a4fff;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 13px 0;
+      font-size: 1.1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .contact-form button:hover {
+      background: #2d2d2d;
+    }
+    @media (max-width: 700px) {
+      .contact-header {
+        padding: 12px 4vw 8px 4vw;
+      }
+      .contact-title {
+        font-size: 1.3rem;
+        margin-top: 40px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="contact-header">
+    <a href="index.html"><img src="images/RealStrike.png" alt="REAL STRIKE Logo" class="contact-logo"></a>
+    <nav class="contact-nav">
+      <a href="sale.html">Sale</a>
+      <a href="application.html">Application</a>
+      <a href="events.html">Events</a>
+      <a href="accessories.html">Accessories</a>
+      <a href="#">Parts</a>
+      <a href="support.html">Support</a>
+      <a href="contact.html">Contact Us</a>
+    </nav>
+  </header>
+  <main class="contact-main">
+    <div class="contact-title">Contact Us</div>
+    <form class="contact-form">
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" required>
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required>
+      <label for="message">Message</label>
+      <textarea id="message" name="message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </main>
+</body>
+</html> 
