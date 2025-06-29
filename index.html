@@ -392,6 +392,108 @@
     ::selection {
       background: #5a4fff22;
     }
+    .product-description {
+      background: #fff;
+      border-radius: 14px;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+      padding: 28px 32px 24px 32px;
+      margin: 32px 0 0 0;
+      max-width: 480px;
+      font-size: 1.05rem;
+    }
+    .product-description h2 {
+      font-size: 1.18rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+      color: #222;
+    }
+    .description-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      color: #444;
+    }
+    .description-list li {
+      margin-bottom: 10px;
+      padding-left: 0;
+      font-size: 1.01rem;
+      display: flex;
+      align-items: flex-start;
+    }
+    .description-list li b {
+      min-width: 140px;
+      display: inline-block;
+      color: #5a4fff;
+      font-weight: 600;
+    }
+    .desc-spec-section {
+      margin: 40px auto 0 auto;
+      max-width: 1100px;
+      padding: 0 20px 40px 20px;
+    }
+    .desc-spec-table {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+      border: 2px solid #ececec;
+      overflow: hidden;
+    }
+    .desc-spec-header {
+      font-size: 1.3rem;
+      font-weight: 700;
+      background: #f7f7f7;
+      padding: 22px 0 18px 0;
+      text-align: center;
+      border-bottom: 1.5px solid #ececec;
+    }
+    .desc-col { grid-column: 1; }
+    .spec-col { grid-column: 2; }
+    .desc-spec-body {
+      padding: 28px 36px 32px 36px;
+      font-size: 1.08rem;
+      color: #333;
+      background: #fff;
+      min-height: 220px;
+    }
+    .desc-bullets {
+      list-style: disc inside;
+      margin: 0;
+      padding-left: 0;
+      color: #444;
+    }
+    .desc-bullets li {
+      margin-bottom: 18px;
+      line-height: 1.7;
+      font-size: 1.08rem;
+    }
+    .spec-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      color: #444;
+    }
+    .spec-list li {
+      margin-bottom: 14px;
+      line-height: 1.7;
+      font-size: 1.08rem;
+    }
+    .spec-list li b {
+      color: #5a4fff;
+      font-weight: 600;
+    }
+    @media (max-width: 900px) {
+      .desc-spec-table {
+        grid-template-columns: 1fr;
+      }
+      .desc-col, .spec-col {
+        grid-column: 1;
+      }
+      .desc-spec-header {
+        border-bottom: 1.5px solid #ececec;
+      }
+    }
   </style>
   <script>
     document.addEventListener('DOMContentLoaded', function() {
@@ -514,6 +616,34 @@
       </div>
     </section>
   </main>
+
+  <!-- Description & Specification Table Section -->
+  <section class="desc-spec-section">
+    <div class="desc-spec-table">
+      <div class="desc-spec-header desc-col">Description</div>
+      <div class="desc-spec-header spec-col">Specification</div>
+      <div class="desc-spec-body desc-col">
+        <ul class="desc-bullets">
+          <li>Bluetooth-enabled blaster for interactive play</li>
+          <li>Compatible with most smartphones</li>
+          <li>Durable 3D printed plastic shell for long-lasting use</li>
+          <li>Easy-to-use phone mount for quick setup</li>
+          <li>Perfect for kids and family fun, indoors or outdoors</li>
+        </ul>
+      </div>
+      <div class="desc-spec-body spec-col">
+        <ul class="spec-list">
+          <li><b>Battery:</b> 5W 1 USB, 1 Type C</li>
+          <li><b>Micro Controller:</b> ESP32 Cam</li>
+          <li><b>Limit Switches:</b> Wire Lever Roller SPST SPDT Mini Microswitch</li>
+          <li><b>Brass inserts:</b> (M by 5mm by 4.2mm)</li>
+          <li><b>Screws:</b> M3 by 20mm Screws</li>
+          <li><b>Phone Mount:</b> Tripod Mount Adapter Clamp Phone Holder Clip</li>
+          <li><b>3D printed Parts:</b> 3D printed Plastic Shell</li>
+        </ul>
+      </div>
+    </div>
+  </section>
 
   <!-- Footer -->
   <footer class="footer">
