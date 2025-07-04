@@ -525,15 +525,33 @@
       margin-bottom: 24px;
       color: #222;
     }
-    .tiktok-slideshow-card {
+    .tiktok-slideshow-row {
+      display: flex;
+      gap: 24px;
+      overflow-x: auto;
+      padding: 24px 0 24px 0;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      justify-content: flex-start;
+      align-items: stretch;
       background: #fff;
       border-radius: 14px;
       box-shadow: 0 2px 16px rgba(0,0,0,0.07);
-      padding: 32px 0 32px 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
       min-height: 200px;
+    }
+    .tiktok-slideshow-row > blockquote {
+      flex: 0 0 340px;
+      scroll-snap-align: start;
+      margin: 0;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(90,79,255,0.06);
+      border: 1.5px solid #e5e5e5;
+      min-width: 325px;
+      max-width: 605px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
     .currency-display {
       font-size: 1rem;
@@ -699,7 +717,7 @@
   <!-- TikTok Slideshow Section -->
   <section class="tiktok-slideshow-section">
     <h2 class="tiktok-slideshow-heading">See It In Action</h2>
-    <div class="tiktok-slideshow-card">
+    <div class="tiktok-slideshow-row">
       <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@play3dtoys/video/7518876980356435206" data-video-id="7518876980356435206" style="max-width: 605px;min-width: 325px;"> 
         <section> 
           <a target="_blank" title="@play3dtoys" href="https://www.tiktok.com/@play3dtoys?refer=embed">@play3dtoys</a> Did you know you can play call of duty in real life 
@@ -707,6 +725,17 @@
           <a title="warzone" target="_blank" href="https://www.tiktok.com/tag/warzone?refer=embed">#warzone</a> 
           <a title="gaming" target="_blank" href="https://www.tiktok.com/tag/gaming?refer=embed">#gaming</a> 
           <a target="_blank" title="♬ noir - venii" href="https://www.tiktok.com/music/noir-7332680484978378754?refer=embed">♬ noir - venii</a> 
+        </section> 
+      </blockquote>
+      <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@play3dtoys/video/7522194481806871864" data-video-id="7522194481806871864" style="max-width: 605px;min-width: 325px;"> 
+        <section> 
+          <a target="_blank" title="@play3dtoys" href="https://www.tiktok.com/@play3dtoys?refer=embed">@play3dtoys</a> Did you know you can play Warzone in real life 
+          <a title="callofduty" target="_blank" href="https://www.tiktok.com/tag/callofduty?refer=embed">#callofduty</a> 
+          <a title="warzone" target="_blank" href="https://www.tiktok.com/tag/warzone?refer=embed">#warzone</a> 
+          <a title="gaming" target="_blank" href="https://www.tiktok.com/tag/gaming?refer=embed">#gaming</a> 
+          <a title="gaming" target="_blank" href="https://www.tiktok.com/tag/gaming?refer=embed">#gaming</a> 
+          <a title="fortnite" target="_blank" href="https://www.tiktok.com/tag/fortnite?refer=embed">#fortnite</a> 
+          <a target="_blank" title="♬ Assumptions (slowed down version) - Sam Gellaitry" href="https://www.tiktok.com/music/Assumptions-slowed-down-version-7168766650370492418?refer=embed">♬ Assumptions (slowed down version) - Sam Gellaitry</a> 
         </section> 
       </blockquote>
     </div>
