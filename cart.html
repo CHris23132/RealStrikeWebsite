@@ -283,7 +283,7 @@
         <img src="images/RS9.png" alt="Real Strike Blaster" class="checkout-product-img">
         <div class="checkout-product-details">
           <div class="checkout-product-title">Real Strike Warfare Two Blaster Set Bluetooth Toy Blaster Electronic Toy Blaster</div>
-          <div class="checkout-product-price">$119.99</div>
+          <div class="checkout-product-price">$89.99</div>
         </div>
       </div>
       <label class="checkout-special-label" for="special-instructions">Enter special instructions below:</label>
@@ -298,7 +298,7 @@
       <div class="order-summary-title">Order summary</div>
       <div class="order-summary-row">
         <span>Subtotal</span>
-        <span class="order-summary-subtotal" id="cart-subtotal">$119.99</span>
+        <span class="order-summary-subtotal" id="cart-subtotal">$89.99</span>
       </div>
       <div class="order-summary-shipping">✅ You are eligible for free shipping!</div>
       <div class="order-summary-note">Taxes and shipping calculated at checkout.</div>
@@ -315,10 +315,10 @@
     // Only allow checkout for a single item
     const checkoutBtn = document.getElementById('checkout-btn');
     const subtotal = document.getElementById('cart-subtotal');
-    subtotal.textContent = `$119.99`;
+    subtotal.textContent = `$89.99`;
     checkoutBtn.addEventListener('click', function(e) {
       e.preventDefault();
-      const stripeUrl = `https://buy.stripe.com/aFabJ1gT75MOgf2aZ96c00b`;
+      const stripeUrl = `https://buy.stripe.com/6oU00jcCR7UW8MA7MX6c00c`;
       window.open(stripeUrl, '_blank');
     });
 
